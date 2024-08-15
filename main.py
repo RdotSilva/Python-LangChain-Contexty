@@ -1,6 +1,7 @@
 from langchain.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores.chroma import Chroma
 from dotenv import load_dotenv
 
 load_dotenv()
