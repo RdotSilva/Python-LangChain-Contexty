@@ -17,7 +17,9 @@ text_splitter = CharacterTextSplitter(
 loader = TextLoader("facts.txt")
 docs = loader.load_and_split(text_splitter=text_splitter)
 
-for doc in docs:
-    # TODO: use embed_query to generate embeddings for each doc and store inside of a vector store
-    print(doc.page_content)
-    print("\n")
+# Create a Chroma instance and immediately calculate embeddings for all docs
+db = Chroma.from_documents(
+    docs,
+    embedding=embeddings,
+    persist_directory="emb",
+)
