@@ -23,3 +23,11 @@ db = Chroma.from_documents(
     embedding=embeddings,
     persist_directory="emb",
 )
+
+question = "What is an interesting fact about the English language?"
+
+results = db.similarity_search_with_score(question)
+
+for result in results:
+    print("\n")
+    print(result.page_content)
