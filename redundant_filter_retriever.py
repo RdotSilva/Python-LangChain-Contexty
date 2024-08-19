@@ -4,3 +4,5 @@ from langchain.schema import BaseRetriever
 
 
 class RedundantFilterRetriever(BaseRetriever):
+    def get_relevant_documents(self, query):
+        return []
