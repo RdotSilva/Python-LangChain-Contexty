@@ -4,6 +4,9 @@ from langchain.chains.retrieval_qa.base import RetrievalQA
 from redundant_filter_retriever import RedundantFilterRetriever
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
+import langchain
+
+langchain.debug = True
 
 load_dotenv()
 
